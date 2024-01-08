@@ -1,5 +1,11 @@
 class RegistervehiclesController < ApplicationController
   def index
+    @registervehicles = Registervehicle.all
+  end
+  def show
+    @registervehicles = Registervehicle.find(params[:id])
+  end  
+  def new
     @registervehicles = Registervehicle.new
   end
   def create
@@ -7,7 +13,7 @@ class RegistervehiclesController < ApplicationController
 
     if @registervehicles.save
       # Handle successful save, e.g., redirect to another page
-      redirect_to "/registervehicles/new", notice: 'Vehilce created successfully!'
+      redirect_to "/registervehicles", notice: 'Vehilce created successfully!'
     else
       # Handle validation errors or other issues
       render :new
@@ -19,9 +25,4 @@ class RegistervehiclesController < ApplicationController
     params.require(:registervehicle).permit(:name, :address, :vehiclenumber, :phonenumber )
   end
 
-  def new
-    binding.break
-    @registervehicles = Registervehicle.all
-  end
-    
 end
