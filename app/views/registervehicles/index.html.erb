@@ -1,0 +1,24 @@
+<h1>RegisterVehicles</h1>
+<%= form_for @registervehicles do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :phonenumber %>
+    <%= f.text_field :phonenumber %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vehiclenumber %>
+    <%= f.text_field :vehiclenumber %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

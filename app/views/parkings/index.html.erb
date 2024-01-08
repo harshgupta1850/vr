@@ -1,0 +1,24 @@
+<h1>Enter Parking Details</h1>
+<%= form_for @parkings do |f| %>
+  <div class="field">
+    <%= f.label :entrytime %>
+    <%= f.text_field :entrytime %>
+  </div>
+  <div class="field">
+    <%= f.label :exittime %>
+    <%= f.text_field :exittime %>
+  </div>
+  <div class="field">
+    <%= f.label :vehiclenumber %>
+    <%= f.text_field :vehiclenumber %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phonenumber %>
+    <%= f.text_field :phonenumber %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

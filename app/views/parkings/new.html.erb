@@ -1,0 +1,14 @@
+<h1>Parking registerd<h1>
+
+# <% if @registervehicles %>
+# <ul>
+#   <% @registervehicles.each do |registervehicle| %>
+#     <li>
+#     <%= link_to registervehicle.name, registervehicle %>
+#     <%= registervehicle.address%>
+#     <%= registervehicle.vehiclenumber %>
+#     <%= registervehicle.phonenumber %>
+#     </li>
+#   <% end %>
+# </ul>
+# <% end %>
