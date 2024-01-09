@@ -1,14 +1,15 @@
 <h1>Parking registerd<h1>
+<li class="dropdown">
+          <a href="#" class="dropbtn">Categories</a>
+          <div class="dropdown-content">
+            <%= link_to 'Technology' %>
+            <%= link_to 'Travel' %>
+            <%= link_to 'Food' %>
+          </div>
+        </li>
 
-# <% if @registervehicles %>
 # <ul>
-#   <% @registervehicles.each do |registervehicle| %>
-#     <li>
-#     <%= link_to registervehicle.name, registervehicle %>
-#     <%= registervehicle.address%>
-#     <%= registervehicle.vehiclenumber %>
-#     <%= registervehicle.phonenumber %>
-#     </li>
+#   <% @registervehicles.each do |vehicle| %>
+#     <li><%= vehicle.name %></li>
 #   <% end %>
 # </ul>
-# <% end %>

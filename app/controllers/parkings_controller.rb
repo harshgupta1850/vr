@@ -1,5 +1,8 @@
 class ParkingsController < ApplicationController
   def index
+    @parkings = Parking.all
+  end
+  def new
     @parkings = Parking.new
   end
   def create
