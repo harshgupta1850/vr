@@ -25,4 +25,18 @@ class RegistervehiclesController < ApplicationController
     params.require(:registervehicle).permit(:name, :address, :vehiclenumber, :phonenumber )
   end
 
+  def edit
+    @registervehicles = Registervehicle.find(params[:id])
+  end
+
+  def update
+    @registervehicles = Registervehicle.find(params[:id])
+
+    if @Registervehicle.update(vehicle_params)
+      redirect_to @Registervehicle
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
 end
