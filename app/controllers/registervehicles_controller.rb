@@ -4,10 +4,14 @@ class RegistervehiclesController < ApplicationController
   end
   def show
     @registervehicles = Registervehicle.find(params[:id])
-  end  
+  end
   def new
     @registervehicles = Registervehicle.new
   end
+  def edit
+    @registervehicles = Registervehicle.find(params[:id])
+  end
+  
   def create
     @registervehicles = Registervehicle.new(vehicle_params)
 
@@ -19,24 +23,25 @@ class RegistervehiclesController < ApplicationController
       render :new
     end
   end 
-  private
-
-  def vehicle_params
-    params.require(:registervehicle).permit(:name, :address, :vehiclenumber, :phonenumber )
-  end
-
-  def edit
-    @registervehicles = Registervehicle.find(params[:id])
-  end
 
   def update
     @registervehicles = Registervehicle.find(params[:id])
-
-    if @Registervehicle.update(vehicle_params)
-      redirect_to @Registervehicle
+    if @registervehicles.update(vehicle_params)
+      redirect_to registervehicle_path , notice: 'Vehicle updated successfully'
     else
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
-
+  def destroy
+    @registervehicles = Registervehicle.find(params[:id])
+    @registervehicles.destroy
+    redirect_to "/registervehicles", notice: 'Post deleted successfully'
+  end
+ 
+  private
+  def vehicle_params
+    params.require(:registervehicle).permit(:name, :address, :vehiclenumber, :phonenumber )
+  end
+  
+    
 end

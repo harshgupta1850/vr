@@ -1,24 +1,22 @@
-<h1>RegisterVehicles</h1>
-<%= form_for Registervehicle.new do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<h1>Please Fill Form for registering your vehcile</h1>
+<%= form_for Registervehicle.new do |form| %>
+  <div>
+    <%= form.label :Name, style: "display: block" %>
+    <%= form.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+  <div>
+    <%= form.label :Address, style: "display: block" %>
+    <%= form.text_field :address %>
   </div>
-  <div class="field">
-    <%= f.label :phonenumber %>
-    <%= f.text_field :phonenumber %>
+  <div>
+    <%= form.label :PhoneNumber, style: "display: block" %>
+    <%= form.text_field :phonenumber %>
   </div>
-
-  <div class="field">
-    <%= f.label :vehiclenumber %>
-    <%= f.text_field :vehiclenumber %>
+  <div>
+    <%= form.label :VehicleNumber, style: "display: block" %>
+    <%= form.text_field :vehiclenumber %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
+<div class="actions">
+  <%= form.submit "Submit" %>
+</div>
 <% end %>

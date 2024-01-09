@@ -1,20 +1,31 @@
-<h1>Vehicle registerd<h1>
+<p style="color: green"><%= notice %></p>
 
-<% if @registervehicles %>
-<ul>
-  <% @registervehicles.each do |registervehicle| %>
-    <li>
-    <%= link_to registervehicle.name, registervehicle %>
-    <%= registervehicle.address%>
-    <%= registervehicle.vehiclenumber %>
-    <%= registervehicle.phonenumber %>
-    </li>
+<p> Please Register Your vehcile from here <%= link_to "New Vehicle",  "registervehicles/new"  %>
+</p>
+
+<h1>List of Registered Vehicles</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Vehcile Number</th>
+    <th>Phone Number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @registervehicles.each do |vehicle| %>
+  <tr>
+    <td><%= vehicle.name %></td>
+    <td><%= vehicle.address %></td>
+    <td><%= vehicle.vehiclenumber %></td>
+    <td><%= vehicle.phonenumber %></td>
+    <td><%= link_to 'Show', registervehicle_path(vehicle) %></td>
+    <td><%= link_to 'Edit', edit_registervehicle_path(vehicle) %></td>
+    <td><%= link_to "Destroy",registervehicle_path(vehicle), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %></td>
+  </tr>
   <% end %>
-</ul>
-<% end %>
-
-
-
-
-
-
+</table>

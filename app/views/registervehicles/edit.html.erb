@@ -1,24 +1,27 @@
-<h1>Update RegisterVehicles</h1>
-<%= form_for Registervehicle.new do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, :value => Registervehicle.find(params[:id]).name %>
+<h1>Edit Your registered Vehicle</h1>
+<%= form_for @registervehicles , method: :patch do |form| %>
+  <div>
+    <%= form.label :Name, style: "display: block" %>
+    <%= form.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address, :value => Registervehicle.find(params[:id]).address %>
+  <div>
+    <%= form.label :Address, style: "display: block" %>
+    <%= form.text_field :address %>
   </div>
-  <div class="field">
-    <%= f.label :phonenumber %>
-    <%= f.text_field :phonenumber, :value => Registervehicle.find(params[:id]).phonenumber %>
+  <div>
+    <%= form.label :PhoneNumber, style: "display: block" %>
+    <%= form.text_field :phonenumber %>
   </div>
-
-  <div class="field">
-    <%= f.label :vehiclenumber %>
-    <%= f.text_field :vehiclenumber, :value => Registervehicle.find(params[:id]).phonenumber %>
+  <div>
+    <%= form.label :VehicleNumber, style: "display: block" %>
+    <%= form.text_field :vehiclenumber %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Submit" %>
+  <div>
+    <%= form.submit "UPDATE DETAILS"%>
   </div>
 <% end %>
+
+<p> Go Back to Registered <%= link_to "Registered Vehicle List",  registervehicles_path  %>
+</p>
+<p> Please Register Your vehcile from here <%= link_to "New Vehicle",  new_registervehicle_path%>
+</p>

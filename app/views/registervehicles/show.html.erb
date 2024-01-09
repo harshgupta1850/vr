@@ -1,4 +1,11 @@
-<p><%= @registervehicles.name %></p>
-
-<p><%= @registervehicles.vehiclenumber %></p>
-<p><%= @registervehicles.phonenumber %></p>
+<p>Name: <%= @registervehicles.name %></p>
+<p>Address: <%= @registervehicles.address %></p>
+<p>Vehicle Number: <%= @registervehicles.vehiclenumber %></p>
+<p>Phone Number: <%= @registervehicles.phonenumber %></p>
+<p> Edit you details <%= link_to "Edit Details",  edit_registervehicle_path   %>
+</p>
+</p>
+<p> Go Back to Registered <%= link_to "Registered Vehicle List",  registervehicles_path  %>
+</p>
+<p> Please Register Your vehcile from here <%= link_to "New Vehicle",  "new"  %>
+</p>
